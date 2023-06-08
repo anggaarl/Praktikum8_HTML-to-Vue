@@ -1,15 +1,32 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template>    
+  <HomeAku/>
+  <h1>Hello World</h1>
+  <h1>Nama saya adalah {{ nama }}</h1>
+  <h1>Umur saya adalah {{ umur }}</h1>
+  <h1>{{ bilangan  }}</h1>
+  <button v-on:click="tambah">Tambah</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomeAku from './components/HomeAku.vue'
+
 
 export default {
   name: 'App',
+  data(){
+    return {
+      nama : "Angga Airul",
+      umur : 15,
+      bilangan : 1,
+    }
+  },
   components: {
-    HelloWorld
+    HomeAku
+  },
+  methods:{
+    tambah(){
+      this.bilangan += 1;
+    }
   }
 }
 </script>
@@ -21,6 +38,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
